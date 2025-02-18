@@ -45,7 +45,7 @@ jobs:
     lint:
         name: Lint Code
         if: github.event.pull_request.draft == false
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
         steps:
             - name: Check out repo
               uses: actions/checkout@v4
@@ -59,7 +59,7 @@ jobs:
                   node-version: lts/*
 
             - name: Install
-              run: npm i --ignore-scripts
+              run: npm i --force --ignore-scripts
 
             - name: Audit NPM package signatures and provenance attestations
               run: npm audit signatures

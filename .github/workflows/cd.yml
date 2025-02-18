@@ -55,7 +55,7 @@ jobs:
               # Build docs/definitions, and remove dev values
               # from package.json before publishing to reduce package size
               run: |
-                  npm i --ignore-scripts
+                  npm i --force --ignore-scripts
                   npm run build --if-present
                   npm pkg delete commitlint devDependencies scripts
                   npm publish --access public --ignore-scripts --provenance
@@ -95,7 +95,7 @@ jobs:
               # Build docs/definitions, and remove dev values
               # from package.json before publishing to reduce package size
               run: |
-                  npm i --ignore-scripts
+                  npm i --force --ignore-scripts
                   npm run build --if-present
                   npm pkg delete commitlint devDependencies scripts
                   npm publish --access public --ignore-scripts --provenance
